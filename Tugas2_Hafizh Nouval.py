@@ -6,10 +6,13 @@ attempts = 6
 while "_" in hidden_word and attempts > 0:
     print("\nWord: ", "".join(hidden_word))
     print(f"Attempts left: {attempts}")
-    user_input = input("Input a letter: ").lower()
+    user_input = input("Input a letter: ")
 
-    if len(user_input) != 1 or not user_input.isalpha():
+    if len(user_input) != 1:
         print("Must input a single letter")
+        continue
+    if user_input.isalpha() == False:
+        print("Must be a letter")
         continue
     if user_input in guessed_letters:
         print("You already guessed that letter")
